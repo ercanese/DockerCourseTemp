@@ -72,3 +72,12 @@ docker run -d --name clock3 jpetazzo/clock
 
 docker logs clock3 --tail 2
 docker logs clock2 --follow 
+
+#bir containerı sağlıklı durdurmak için.
+docker stop <containerid>
+docker stop 12a
+#bir containeri direk kapatmak için.
+docker kill 12a
+docker kill <containerid>
+#çalışan bir container durdurmak ve silmek için.
+docker rm 12a --force
