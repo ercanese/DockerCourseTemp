@@ -107,3 +107,5 @@ cat /etc/os-release komutyla versiyonu kontrol edelim.
 #yukarıdaki komutu kullanarak versiyonu görüntüleyelim.
 
 #redis 6.0alpine versiyonunu indirelim.
+
+test
