@@ -81,3 +81,4 @@ docker kill 12a
 docker kill <containerid>
 #çalışan bir container durdurmak ve silmek için.
 docker rm 12a --force
+test
