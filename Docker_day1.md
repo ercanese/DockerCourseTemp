@@ -17,5 +17,13 @@ docker run busybox date
 #examples
 #busybox imajından container türeterek ekranada hello world ve şu anki date yazalım.
 #ubuntu imajından container türeterek hello world ve date ekrana yazalım.
+docker run ubuntu echo hello world
+docker run ubuntu date
 
+#çalışan containerları listelemek için docker ps kullanılır.
+docker ps
+#tüm çalışan veya çalışmayan containerları listelemek için 
+docker ps -a
 
+#container çalıştırılken içerisine(terminal) girip komut çalıştırmak için.
+docker run -it ubuntu /bin/bash
