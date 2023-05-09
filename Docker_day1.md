@@ -27,3 +27,15 @@ docker ps -a
 
 #container çalıştırılken içerisine(terminal) girip komut çalıştırmak için.
 docker run -it ubuntu /bin/bash
+#ubuntu imajı içerisine girip mkdir demo ile bir klasör oluşturup çıkalım.
+docker run -it ubuntu /bin/bash
+mkdir demo
+exit
+docker run -it ubuntu /bin/bash
+apt update 
+apt install figlet
+exit
+#container silmek için
+docker rm <containerid>
+#tüm containerları silmek için
+docer rm $(docker ps -qa)
