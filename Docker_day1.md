@@ -81,4 +81,29 @@ docker kill 12a
 docker kill <containerid>
 #çalışan bir container durdurmak ve silmek için.
 docker rm 12a --force
-test
+
+#çalışan bir container restart etmek için.
+docker restart <containerid>
+docker restart 1a2
+
+#durmus olan bir container başlatmak için.
+docker start <containerid>
+docker start 1a2
+
+#imajları indirirken tage göre indirmek için.
+
+docker pull ubuntu:18.04
+
+#tage göre çalıştırmak için
+docker run ubuntu:18.04
+
+#alpine imajı 1.4 versiyonunu indirelim ve it komutu ile içerisine girip
+cat /etc/os-release komutyla versiyonu kontrol edelim. 
+
+#alpine imajı 1.4 versiyonunu indirelim ve it komutu ile içerisine girip
+cat /etc/os-release komutyla versiyonu kontrol edelim. 
+
+#ubuntu 23.04 imajını indirelim ve ondan it komutu ile bir container türetelim.
+#yukarıdaki komutu kullanarak versiyonu görüntüleyelim.
+
+#redis 6.0alpine versiyonunu indirelim.
