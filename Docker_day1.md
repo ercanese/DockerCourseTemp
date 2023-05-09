@@ -38,4 +38,37 @@ exit
 #container silmek için
 docker rm <containerid>
 #tüm containerları silmek için
-docer rm $(docker ps -qa)
+docker rm $(docker ps -qa)
+#container idleri sadece döndürmek için.
+docker ps -qa
+
+
+#bir container ayakara durabilmesi için devamlı çaşılan bir processe ihtiyacı vardır,
+docker run jpetazzo/clock
+ctrl+c
+#arka planda container çalıştırmak istiyorsak.
+docker run -d jpetazzo/clock
+
+#docker üzerindeki tüm objelerin özelliklerini ve değerlerini ekranda görmek için.
+docker inspect <objectid>
+docker inspect 4aa
+
+#container içerisinden logları görebilmek için.
+docker logs
+#logları takip etmek için
+docker logs 23a --follow 
+#tail komutuyla gelecek log sayısını belirtebiliriz.
+docker logs 43a --tail 3
+#en son oluşturulan container hangisi
+docker lps -l
+
+#clock uygulamasını arka planda 3 adet çalışacak şekilde oluşturun isimleri
+#clock1 2 3 olarak oluşsun.
+#3 container loglarını ekranda en son 2 tane logu görecek şekilde loglarına bakalım.
+#2. containerında follow komutuyla loglarını takip edelim.
+docker run -d --name clock1 jpetazzo/clock
+docker run -d --name clock2 jpetazzo/clock
+docker run -d --name clock3 jpetazzo/clock
+
+docker logs clock3 --tail 2
+docker logs clock2 --follow 
