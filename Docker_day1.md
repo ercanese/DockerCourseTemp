@@ -97,15 +97,35 @@ docker pull ubuntu:18.04
 #tage göre çalıştırmak için
 docker run ubuntu:18.04
 
-#alpine imajı 1.4 versiyonunu indirelim ve it komutu ile içerisine girip
-cat /etc/os-release komutyla versiyonu kontrol edelim. 
 
 #alpine imajı 1.4 versiyonunu indirelim ve it komutu ile içerisine girip
 cat /etc/os-release komutyla versiyonu kontrol edelim. 
+docker pull alpine:1.14
+docker run -it alpine:1.14 /bin/sh
+cat /etc/os-release
 
 #ubuntu 23.04 imajını indirelim ve ondan it komutu ile bir container türetelim.
 #yukarıdaki komutu kullanarak versiyonu görüntüleyelim.
+docker  pull ubuntu:23:04
+docker run -it ubuntu:23.04 /bin/bash
+cat /etc/os-release
 
 #redis 6.0alpine versiyonunu indirelim.
+docker pull redis:6.0-alpine
+docker run -d --name redis
 
-test
+
+#imaj silmek için.
+docker rmi <imageid>
+docker rmi 123
+docker rmi 123 --force
+
+#çalışan bir container içerisine girmek için.
+docker exec -it <containerid> /bin/sh
+docker exec -it 213a /bin/bash
+docker exec 212a date
+
+#bir adet redis container ayağa kaldıralım ve
+#exec komutu ile terminaline girerek klasör oluşturalım.
+mkdir demo
+exit
