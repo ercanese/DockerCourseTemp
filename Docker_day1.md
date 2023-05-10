@@ -235,7 +235,7 @@ docker exec -it --name mvcdemo mcr.microsoft.com/dotnet/aspnet:7.0 /bin/bash
 dotnet --info
 mkdir app
 exit
-
+docker ps
 git clone https://github.com/ercanese/DockerCourseTemp.git
 
 cd DockerCourseTemp

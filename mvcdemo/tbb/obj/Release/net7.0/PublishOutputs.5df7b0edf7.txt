@@ -1,0 +1,7 @@
+C:\course\course\mvcdemo\tbb\out\tbb.exe
+C:\course\course\mvcdemo\tbb\out\appsettings.Development.json
+C:\course\course\mvcdemo\tbb\out\appsettings.json
+C:\course\course\mvcdemo\tbb\out\tbb.dll
+C:\course\course\mvcdemo\tbb\out\tbb.deps.json
+C:\course\course\mvcdemo\tbb\out\tbb.runtimeconfig.json
+C:\course\course\mvcdemo\tbb\out\tbb.pdb
