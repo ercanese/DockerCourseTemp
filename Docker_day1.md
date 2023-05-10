@@ -177,3 +177,35 @@ docker commit --change='CMD ["pwsh","time.ps1"]' --change='WORKDIR /app' 12a pow
 
 
 
+#Python 3.10 versiyonunu kapsayan bir base imaj bulun ve indirin.
+#imaj içerisine girerek pip ile flask modlünü yükleyin.
+
+pip install flask
+
+#flask ve python versiyonlarına bakın.
+flask --version
+python --version
+
+#app adında klasör oluşturun.
+apt update
+apt install nano
+
+apk add nano
+
+#nano editoruyle app.py adında bir dosya olusturup
+i#çerisine uygulamayı yapıstırın.
+#flask ile çalışıyormu deneyin.
+flask run
+ctrl c
+exit
+#container'ı imaj olarak kaydedin.
+#workdir ve cmd aşağıdaki gibi olsun.
+
+workdir /app
+cmd flask run --host=0.0.0.0
+
+curl http://ipaddress:5000
+
+
+
+
