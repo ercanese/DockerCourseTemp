@@ -218,3 +218,11 @@ docker run -d -p 5051:5000 --name demo flask:demo
 
 #flask uygulamasını 9898 portuna bağlayarak dış dünyaya açalım.
 #redis uygulamasını 8989 portune baglayarak dış dünyaya açalım.
+
+
+#imajların taglerini ve isimlerini değiştirmek için.
+docker tag <imagename>:<tag> <newimagename>:<tag>
+docker tag powershelldemo:v1 demopowershell:v1
+
+#private registry container imajlarımızı tutmak için kullandığımız bir yazılım.
+docker run -d -p 5000:5000 --restart always --name registry registry:2
