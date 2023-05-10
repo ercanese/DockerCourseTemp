@@ -226,3 +226,44 @@ docker tag powershelldemo:v1 demopowershell:v1
 
 #private registry container imajlarımızı tutmak için kullandığımız bir yazılım.
 docker run -d -p 5000:5000 --restart always --name registry registry:2
+
+#mvc hangi .net versiyonla yazıldıysa onu indirelim.
+docker pull mcr.microsoft.com/dotnet/aspnet:7.0
+
+#sonra container içerisine girelim.
+docker exec -it --name mvcdemo mcr.microsoft.com/dotnet/aspnet:7.0 /bin/bash
+dotnet --info
+mkdir app
+exit
+
+git clone https://github.com/ercanese/DockerCourseTemp.git
+
+cd DockerCourseTemp
+cd mvc
+cd tbb 
+
+#container içerisine dosya kopyalamak için
+docker cp out/ 123a:/app 
+
+docker start 123a -i
+
+cd app
+dotnet tbb.dll
+exit
+
+docker commit --change='CMD ["dotnet","tbb.dll"]' --change='WORKDIR /app' 123a mvc:v1
+
+docker tag mvc:v1 localhost:5000/mvc:v1
+docker push localhost:5000/mvc:v1
+
+
+docker run -d -p 7777:80 --name app1 mvc:v1
+
+
+
+
+
+
+
+
+
