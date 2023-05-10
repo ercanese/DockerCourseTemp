@@ -190,10 +190,11 @@ python --version
 apt update
 apt install nano
 
+#alpine 
 apk add nano
 
 #nano editoruyle app.py adında bir dosya olusturup
-i#çerisine uygulamayı yapıstırın.
+#içerisine uygulamayı yapıstırın.
 #flask ile çalışıyormu deneyin.
 flask run
 ctrl c
@@ -206,6 +207,7 @@ cmd flask run --host=0.0.0.0
 
 curl http://ipaddress:5000
 
+docker commit --change='CMD ["flask","run","--host=0.0.0.0"]' --change='WORKDIR /app' fd7f flaskdemo:demo-v1
 
-
-
+#inspect kullanırken sadece belirli bir alanı getirmek için format operatörü kullanılabilir.
+docker inspect -f '{{ .NetworkSettings.Networks.bridge.IPAddress }}' 9da
