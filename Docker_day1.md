@@ -211,3 +211,10 @@ docker commit --change='CMD ["flask","run","--host=0.0.0.0"]' --change='WORKDIR 
 
 #inspect kullanırken sadece belirli bir alanı getirmek için format operatörü kullanılabilir.
 docker inspect -f '{{ .NetworkSettings.Networks.bridge.IPAddress }}' 9da
+
+#dışarıdan erişilmesi gereken containerkara port mapping yapabiliriz.
+docker run -d -p <hostport>:<containerport> --name demo flask:demo 
+docker run -d -p 5051:5000 --name demo flask:demo 
+
+#flask uygulamasını 9898 portuna bağlayarak dış dünyaya açalım.
+#redis uygulamasını 8989 portune baglayarak dış dünyaya açalım.
