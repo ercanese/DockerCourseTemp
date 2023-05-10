@@ -259,6 +259,22 @@ docker push localhost:5000/mvc:v1
 
 docker run -d -p 7777:80 --name app1 mvc:v1
 
+#build işlemlerini otomatil olarak gerçekleştirmek için
+#docker file yazmamız gerekiyor. Docker file yazdıktan sonra
+#aşağıdaki komutla imajlarımızı oluşturabiliriz.
+
+docker build -t demo:v1 .
+
+#container içerisine dışarıdan volume maplemek için.
+
+docker run -d --name app1 -p 8782:80 -v /data/:/datas/ mvc:v2
+
+#bir adet ubuntu container ayaga kaldıralım fakat hostataki demo klasörü container
+#içerisindeki demo klasörüne map olsun.
+
+mkdir demo
+touch demo.txt
+
 
 
 
