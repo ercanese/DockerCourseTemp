@@ -60,7 +60,7 @@ docker logs 23a --follow
 #tail komutuyla gelecek log sayısını belirtebiliriz.
 docker logs 43a --tail 3
 #en son oluşturulan container hangisi
-docker lps -l
+docker ps -l
 
 #clock uygulamasını arka planda 3 adet çalışacak şekilde oluşturun isimleri
 #clock1 2 3 olarak oluşsun.
