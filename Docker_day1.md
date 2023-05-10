@@ -164,5 +164,16 @@ enter
 pwsh time.ps1
 
 exit
+
+#oluşturduğumuz containerları imaj haline çevirmek için.
 docker commit  <containerid> <imagename>:<tag>
 docker commit 213a powershell:v1
+
+docker run powershell:v1 pwsh /app/time.ps1
+
+#imaj haline çevirirken change parametresi ile cmd veya workdir değiştirmek.
+docker commit --change='CMD ["pwsh","/app/time.ps1"]' 12a powershell:v2
+docker commit --change='CMD ["pwsh","time.ps1"]' --change='WORKDIR /app' 12a powershell:v2
+
+
+
