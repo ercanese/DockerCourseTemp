@@ -162,3 +162,7 @@ y
 enter
 
 pwsh time.ps1
+
+exit
+docker commit  <containerid> <imagename>:<tag>
+docker commit 213a powershell:v1
