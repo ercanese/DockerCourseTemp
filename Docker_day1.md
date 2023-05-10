@@ -129,3 +129,36 @@ docker exec 212a date
 #exec komutu ile terminaline girerek klasör oluşturalım.
 mkdir demo
 exit
+
+
+#PowerShell projesi
+
+docker pull ubuntu
+docker run -it --name powershell ubuntu /bin/bash
+
+apt-get update
+# Install pre-requisite packages.
+apt-get install -y wget apt-transport-https software-properties-common
+# Download the Microsoft repository GPG keys
+wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+# Register the Microsoft repository GPG keys
+dpkg -i packages-microsoft-prod.deb
+# Delete the the Microsoft repository GPG keys file
+rm packages-microsoft-prod.deb
+# Update the list of packages after we added packages.microsoft.com
+apt-get update
+# Install PowerShell
+apt-get install -y powershell
+
+apt install nano
+
+mkdir app
+cd app
+nano time.ps1
+<code paste>
+
+ctrl x
+y
+enter
+
+pwsh time.ps1
